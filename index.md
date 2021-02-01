@@ -12,4 +12,6 @@ Bias could also be plotted across Europe, with increasing levels of association 
 
 Finally Sankey plots were made to identify which groups most contributed towards bias. A strong-weak bias was assigned according to Cohen (1977). Age and Gender were examined:
 
+<img src="../images/GenderScience/GenderScienceAllRaw.html" alt="GenderScience Sankey plot">
+
 ![GenderScience bias over time](./images/GenderScience/GenderScienceAllRaw.html)![GenderCareer bias over time](./images/GenderCareer/GenderCareerAllRaw.html)
