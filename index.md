@@ -12,11 +12,14 @@ Bias could also be plotted across Europe, with increasing levels of association 
 
 Finally Sankey plots were made to identify which groups most contributed towards bias. A strong-weak bias was assigned according to Cohen (1977). Age and Gender were examined:
 
-[GenderScience Sankey plot](./images/GenderScience/GenderScienceAllRaw.html)[GenderCareer Sankey plot](./images/GenderCareer/GenderCareerAllRaw.html)
+[GenderScience Sankey plot](./images/GenderScience/GenderScienceAllRaw.html)
+[GenderCareer Sankey plot](./images/GenderCareer/GenderCareerAllRaw.html)
 
 One observation from the above plots is that there are more women and younger people participating. Age is an expected difference due to varying levels of computer literacy however women outnumbering men suggests they are more engaged in this kind of research, perhaps unsurprising given the level of bias against them.
 
 By drawing Sankey plots comparing bias over 10 years, an optimistic outlook comes through. When shown as a percentage of respondents it is clear that the number of participants in the strong male-career/science bias has decreased with gains in the association of female-career/science.
 
-[GenderScience bias over time Sankey looking at male vs female participants](./images/GenderScience/GenderScience2009v2019GenderPercent.html)[GenderScience bias over time Sankey looking at age grouped participants](./images/GenderScience/GenderScience2009v2019AgePercent.html)
-[GenderCareer bias over time Sankey looking at male vs female participants](./images/GenderCareer/GenderCareer2009v2019GenderPercent.html)[GenderCareer bias over time Sankey looking at age grouped participants](./images/GenderCareer/GenderCareer2009v2019AgePercent.html)
+[GenderScience bias over time Sankey looking at male vs female participants](./images/GenderScience/GenderScience2009v2019GenderPercent.html)
+[GenderScience bias over time Sankey looking at age grouped participants](./images/GenderScience/GenderScience2009v2019AgePercent.html)
+[GenderCareer bias over time Sankey looking at male vs female participants](./images/GenderCareer/GenderCareer2009v2019GenderPercent.html)
+[GenderCareer bias over time Sankey looking at age grouped participants](./images/GenderCareer/GenderCareer2009v2019AgePercent.html)
