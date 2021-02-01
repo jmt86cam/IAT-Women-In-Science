@@ -4,4 +4,8 @@ An analysis of Harvard Implicit Association Test data centred around Women in Sc
 
 Using R it was possible to plot the association of words relating to "Male" with "Science" and "Career", as opposed to pairing "Female" words with these or pairing "Male" words to words associated with "Arts" and "Family" respectively.
 
-![GenderScience bias over time](./images/GenderScience/GenderScienceTime.jpg)
+![GenderScience bias over time](./images/GenderScience/GenderScienceTime.jpg) ![GenderCareer bias over time](./images/GenderCareer/GenderCareerTime.jpg)
+
+Bias could also be plotted across Europe, with increasing levels of association between words relating to "Male" and "Science" or "Career" being represented by darker colour.
+
+![GenderScience bias over time](./images/GenderScience/GenderScienceEurope.jpg) ![GenderCareer bias over time](./images/GenderCareer/GenderCareerEurope.jpg)
