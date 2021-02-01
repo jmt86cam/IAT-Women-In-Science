@@ -14,4 +14,4 @@ Finally Sankey plots were made to identify which groups most contributed towards
 
 <img src="../images/GenderScience/GenderScienceAllRaw.html" alt="GenderScience Sankey plot">
 
-![GenderScience bias over time](./images/GenderScience/GenderScienceAllRaw.html)![GenderCareer bias over time](./images/GenderCareer/GenderCareerAllRaw.html)
+[GenderScience bias over time](./images/GenderScience/GenderScienceAllRaw.html)[GenderCareer bias over time](./images/GenderCareer/GenderCareerAllRaw.html)
