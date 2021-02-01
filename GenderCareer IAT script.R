@@ -591,6 +591,193 @@ MaleFemalePercent <- sankeyNetwork(Links = links, Nodes = nodes,
               fontSize= 12, nodeWidth = 30, iterations = 0)
 saveNetwork(MaleFemalePercent, "GenderCareerMaleFemalePercent.html", selfcontained = TRUE)
 rm(MaleFemalePercent)
+
+## Plot Age raw values
+# Set what the data will "pass through"
+nodes = data.frame("name" = 
+                     c("Male", # Node 0
+                       "Female", # Node 1
+                       "Strong Male-Career bias", # Node 2
+                       "Moderate Male-Career bias", # Node 3
+                       "Weak Male-Career bias", # Node 4
+                       "Neutral Gender-Career bias", # Node 5
+                       "Weak Female-Career bias", # Node 6
+                       "Moderate Female-Career bias", # Node 7
+                       "Strong Female-Career bias", # Node 8
+                       "<16", # Node 9
+                       "16-24", # Node 10
+                       "25-34", # Node 11
+                       "35-44", # Node 12
+                       "45-54", # Node 13
+                       "55-64", # Node 14
+                       "65-74", # Node 15
+                       "75 +"))# Node 16
+
+links = as.data.frame(matrix(c(
+  2, 9, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "Under16"]),
+  2, 10, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "From16to24"]),
+  2, 11, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "From25to34"]),
+  2, 12, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "From35to44"]),
+  2, 13, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "From45to54"]),
+  2, 14, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "From55to64"]),
+  2, 15, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "From65to74"]),
+  2, 16, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Male-Career bias", "From75up"]),
+  
+  3, 9, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "Under16"]),
+  3, 10, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "From16to24"]),
+  3, 11, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "From25to34"]),
+  3, 12, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "From35to44"]),
+  3, 13, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "From45to54"]),
+  3, 14, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "From55to64"]),
+  3, 15, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "From65to74"]),
+  3, 16, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Male-Career bias", "From75up"]),
+  
+  4, 9, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "Under16"]),
+  4, 10, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "From16to24"]),
+  4, 11, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "From25to34"]),
+  4, 12, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "From35to44"]),
+  4, 13, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "From45to54"]),
+  4, 14, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "From55to64"]),
+  4, 15, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "From65to74"]),
+  4, 16, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Male-Career bias", "From75up"]),
+  
+  5, 9, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "Under16"]),
+  5, 10, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "From16to24"]),
+  5, 11, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "From25to34"]),
+  5, 12, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "From35to44"]),
+  5, 13, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "From45to54"]),
+  5, 14, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "From55to64"]),
+  5, 15, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "From65to74"]),
+  5, 16, as.numeric(AllCounts[AllCounts$IATCategory == "Neutral Gender-Career bias", "From75up"]),
+  
+  6, 9, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "Under16"]),
+  6, 10, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "From16to24"]),
+  6, 11, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "From25to34"]),
+  6, 12, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "From35to44"]),
+  6, 13, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "From45to54"]),
+  6, 14, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "From55to64"]),
+  6, 15, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "From65to74"]),
+  6, 16, as.numeric(AllCounts[AllCounts$IATCategory == "Weak Female-Career bias", "From75up"]),
+  
+  7, 9, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "Under16"]),
+  7, 10, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "From16to24"]),
+  7, 11, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "From25to34"]),
+  7, 12, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "From35to44"]),
+  7, 13, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "From45to54"]),
+  7, 14, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "From55to64"]),
+  7, 15, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "From65to74"]),
+  7, 16, as.numeric(AllCounts[AllCounts$IATCategory == "Moderate Female-Career bias", "From75up"]),
+  
+  8, 9, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "Under16"]),
+  8, 10, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "From16to24"]),
+  8, 11, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "From25to34"]),
+  8, 12, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "From35to44"]),
+  8, 13, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "From45to54"]),
+  8, 14, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "From55to64"]),
+  8, 15, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "From65to74"]),
+  8, 16, as.numeric(AllCounts[AllCounts$IATCategory == "Strong Female-Career bias", "From75up"])
+),
+byrow = TRUE, ncol = 3))
+names(links) = c("source", "target", "value")
+AllRaw <- sankeyNetwork(Links = links, Nodes = nodes,
+                        Source = "source", Target = "target",
+                        Value = "value", NodeID = "name",
+                        fontSize= 12, nodeWidth = 30, iterations = 0)
+saveNetwork(AllRaw, "GenderCareerAgeRaw.html", selfcontained = TRUE)
+rm(AllRaw)
+## Plot Age percentage values
+# Set what the data will "pass through"
+nodes = data.frame("name" = 
+                     c("Male", # Node 0
+                       "Female", # Node 1
+                       "Strong Male-Career bias", # Node 2
+                       "Moderate Male-Career bias", # Node 3
+                       "Weak Male-Career bias", # Node 4
+                       "Neutral Gender-Career bias", # Node 5
+                       "Weak Female-Career bias", # Node 6
+                       "Moderate Female-Career bias", # Node 7
+                       "Strong Female-Career bias", # Node 8
+                       "<16", # Node 9
+                       "16-24", # Node 10
+                       "25-34", # Node 11
+                       "35-44", # Node 12
+                       "45-54", # Node 13
+                       "55-64", # Node 14
+                       "65-74", # Node 15
+                       "75 +"))# Node 16
+
+links = as.data.frame(matrix(c(
+  2, 9, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "Under16"]),
+  2, 10, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "From16to24"]),
+  2, 11, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "From25to34"]),
+  2, 12, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "From35to44"]),
+  2, 13, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "From45to54"]),
+  2, 14, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "From55to64"]),
+  2, 15, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "From65to74"]),
+  2, 16, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Male-Career bias", "From75up"]),
+  
+  3, 9, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "Under16"]),
+  3, 10, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "From16to24"]),
+  3, 11, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "From25to34"]),
+  3, 12, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "From35to44"]),
+  3, 13, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "From45to54"]),
+  3, 14, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "From55to64"]),
+  3, 15, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "From65to74"]),
+  3, 16, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Male-Career bias", "From75up"]),
+  
+  4, 9, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "Under16"]),
+  4, 10, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "From16to24"]),
+  4, 11, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "From25to34"]),
+  4, 12, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "From35to44"]),
+  4, 13, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "From45to54"]),
+  4, 14, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "From55to64"]),
+  4, 15, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "From65to74"]),
+  4, 16, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Male-Career bias", "From75up"]),
+  
+  5, 9, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "Under16"]),
+  5, 10, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "From16to24"]),
+  5, 11, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "From25to34"]),
+  5, 12, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "From35to44"]),
+  5, 13, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "From45to54"]),
+  5, 14, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "From55to64"]),
+  5, 15, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "From65to74"]),
+  5, 16, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Neutral Gender-Career bias", "From75up"]),
+  
+  6, 9, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "Under16"]),
+  6, 10, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "From16to24"]),
+  6, 11, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "From25to34"]),
+  6, 12, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "From35to44"]),
+  6, 13, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "From45to54"]),
+  6, 14, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "From55to64"]),
+  6, 15, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "From65to74"]),
+  6, 16, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Weak Female-Career bias", "From75up"]),
+  
+  7, 9, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "Under16"]),
+  7, 10, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "From16to24"]),
+  7, 11, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "From25to34"]),
+  7, 12, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "From35to44"]),
+  7, 13, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "From45to54"]),
+  7, 14, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "From55to64"]),
+  7, 15, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "From65to74"]),
+  7, 16, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Moderate Female-Career bias", "From75up"]),
+  
+  8, 9, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "Under16"]),
+  8, 10, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "From16to24"]),
+  8, 11, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "From25to34"]),
+  8, 12, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "From35to44"]),
+  8, 13, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "From45to54"]),
+  8, 14, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "From55to64"]),
+  8, 15, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "From65to74"]),
+  8, 16, as.numeric(AllCounts_pct[AllCounts_pct$IATCategory == "Strong Female-Career bias", "From75up"])
+),
+byrow = TRUE, ncol = 3))
+names(links) = c("source", "target", "value")
+AllPercent <- sankeyNetwork(Links = links, Nodes = nodes,
+                            Source = "source", Target = "target",
+                            Value = "value", NodeID = "name",
+                            fontSize= 12, nodeWidth = 30, iterations = 0)
+saveNetwork(AllPercent, "GenderCareerAgePercent.html", selfcontained = TRUE)
+rm(AllPercent)
 #### end ####
 
 #### 2009 vs 2019 Sankey Plot ####
